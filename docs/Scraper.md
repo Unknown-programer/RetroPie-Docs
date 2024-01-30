@@ -2,7 +2,7 @@ Scraping is a way to get metadata, boxart and video previews (snapshots) for you
 
 Scraping adds extra information to the game - Publisher, Developer, Release year, Genre, Description, Number of Players supported and Rating.
 
-![A scraped game](https://cloud.githubusercontent.com/assets/10035308/10357565/b97b4ec4-6d40-11e5-9f44-6b27ae31ebc3.png)
+![A scraped game](images/scraper/scraped_game.png)
 
 Since EmulationStation 2.1.0 you can have a video preview as scraped art, provided that is's supported by the theme EmulationStation is using.
 
@@ -10,21 +10,21 @@ RetroPie includes the following scrapers:
 
 * The built-in EmulationStation scraper, which pulls information from TheGamesDb.net or ScreenScraper.fr.
 * Steven Selph's Scraper (`scraper`), which pulls information from TheGamesDB.net, ScreenScraper.fr, [OpenVGDB](https://github.com/OpenVGDB), ArcadeItalia.net. It can also use your local media for scraping, adding it to EmulationStation's gamelist.
-* Lars Muldjord's Skyscraper (`skyscraper`), which pulls information from TheGamesDB.net, ScreenScraper.fr, OpenRetro.org, MobyGames.com, IGDB.com and WorldOfSpectrum.org. It also has the ability to import your local media into the final gamelist.
+* Skyscraper (`skyscraper`), which pulls information from TheGamesDB.net, ScreenScraper.fr, OpenRetro.org, MobyGames.com, IGDB.com and WorldOfSpectrum.org. It also has the ability to import your local media into the final gamelist.
 
 ## EmulationStation Built-In Scraper
 
 EmulationStation has a built in scraper that pulls from [TheGamesDB](http://thegamesdb.net/) or [ScreenScraper](https://screenscraper.fr). It can be accessed from the main menu in EmulationStation, opened by the `Start` button.
 
-![scrapermenu](https://cloud.githubusercontent.com/assets/10035308/10713271/534a0560-7a73-11e5-8076-90131881c054.png)
+![scrapermenu](images/scraper/es_scraper_1.png)
 
-![scrapermenu2](https://cloud.githubusercontent.com/assets/10035308/10713277/92462faa-7a73-11e5-86d4-34e49ca93d14.png)
+![scrapermenu2](images/scraper/es_scraper_2.png)
 
-![scrapermenu3](https://cloud.githubusercontent.com/assets/10035308/10713295/3b237434-7a74-11e5-8c30-68d76b67388e.png)
+![scrapermenu3](images/scraper/es_scraper_3.png)
 
-![scrapermenu4](https://cloud.githubusercontent.com/assets/10035308/10713292/0f9360cc-7a74-11e5-8784-b1f2555a785f.png)
+![scrapermenu4](images/scraper/es_scraper_4.png)
 
-![scrapermenu5](https://cloud.githubusercontent.com/assets/10035308/10713306/b89d2d56-7a74-11e5-9415-485b1b5dbc0f.png)
+![scrapermenu5](images/scraper/es_scraper_5.png)
 
 **Note**: during the *first* scraping session using TheGamesDB as scraping source, Emulationstation will download additional information (list of publishers, developers, genres) from TheGamesDB. The scraper will seem unresponsive for a very short period of time - depending on the download speed - but after the necessary information is downloaded and saved, the scraping will resume. Any subsequent scraping operations will re-use the downloaded information, without any additional downloads.
 
@@ -55,13 +55,13 @@ Make sure to update to the latest version of Retropie-Setup script if you're mis
 
 Scraper is started from inside the Retropie Setup Menu. Navigate to **Manage Packages** > **Manage Optional Packages** and select scraper. You will navigate to the **Choose an option for scraper** window. Select option C **Configuration / Options**. It will take you to the window shown below and allow you to run/configure the various functions of the scraper.
 
-<img src="https://raw.githubusercontent.com/UncleRus/__crap/master/sselph_scraper_shot.png" width="550">
+<img src="../images/scraper/sselph_scraper_1.png" width="550">
 
 - **Scrape All Systems:** This will scrape all the systems the scraper supports
 
 - **Scrape Chosen Systems:** You can choose to only scrape the systems you choose (press the **spacebar** to select each system) and select ok to start scraping.
 
-![systems](https://cloud.githubusercontent.com/assets/10035308/10713183/98a7ad9a-7a70-11e5-8e24-92d9a4a767b8.png)
+![systems](images/scraper/sselph_scraper_2.png)
 
 - **Thumbnails Only:** When enabled it will load lower resolution images to save space (enabled by default).
 
@@ -173,7 +173,7 @@ Usage of /opt/retropie/supplementary/scraper/scraper:
   -mame_img string
     	Comma separated order to prefer images, s=snap, t=title, m=marquee, c=cabniet, b=boxart, 3b=3D-boxart, fly=flyer. (default "t,m,s,c")
   -mame_src string
-    	Comma seperated order to prefer mame sources, ss=screenscraper, adb=arcadeitalia, mamedb=mamedb-mirror, gdb=theGamesDB-neogeo (default "adb,gdb")
+    	Comma separated order to prefer mame sources, ss=screenscraper, adb=arcadeitalia, mamedb=mamedb-mirror, gdb=theGamesDB-neogeo (default "adb,gdb")
   -marquee_dir directory
     	The directory to place downloaded marquees to locally. (default "images")
   -marquee_format jpg or png
@@ -238,11 +238,11 @@ Usage of /opt/retropie/supplementary/scraper/scraper:
     	Use N worker threads to process roms. (default 1)
 ```
 
-## Lars Muldjord's Skyscraper
+## Skyscraper
 
-**Skyscraper** by Lars Muldjord is a powerful and versatile yet easy to use game scraper written in C++ for use with multiple frontends running on a Linux system. It scrapes and caches various game resources from various web sources, including media such as screenshot, cover and video. It then gives you the option to generate a game list and artwork for the chosen frontend by combining all of the cached resources.
+**Skyscraper** is a powerful and versatile yet easy to use game scraper written in C++ for use with multiple frontends running on a Linux system. It was created by [Lars Muldjord](https://github.com/muldjord), enhanced by [Joe Huss](https://github.com/detain/) and now maintained by [Gemba](https://github.com/Gemba). It scrapes and caches various game resources from various web sources, including media such as screenshot, cover and video. It then gives you the option to generate a game list and artwork for the chosen frontend by combining all of the cached resources.
 
-For a more thorough description of any functionality described here, please check out the [official Skyscraper documentation](https://github.com/muldjord/skyscraper).
+For a more thorough description of any functionality described here, please check out the [official Skyscraper documentation](https://gemba.github.io/skyscraper/).
 
 ### Installation
 
@@ -258,13 +258,13 @@ Make sure to update to the latest version of Retropie-Setup script if you don't 
 
 **Skyscraper** can be used to generate scraping information for both [EmulationStation](EmulationStation.md) and [AttractMode](http://attractmode.org). Installing `skyscraper` as a RetroPie package will automatically configure it for EmulationStation, but if you wish to use it for generating **AttractMode** metadata, you can use **Skyscraper** from the command line.
 
-Check the [official documentation](https://github.com/muldjord/skyscraper/blob/master/docs/CLIHELP.md) for a list of all command line options.
+Check the [official documentation](https://gemba.github.io/skyscraper/CLIHELP/) for a list of all command line options.
 
 The recommended usage is to scrape your system(s) by gathering data (image/videos/information) from as many online sources as you'd like. All of the data will be cached while doing so. Then, when you have gathered enough data, be sure to generate the game list for Emulationstation from the cache. This will combine all of your cached data into the most complete results for each rom.
 
 **Skyscraper** can be started from the RetroPie-Setup script, opening the **Configuration/Tools** menu and choosing `skyscraper`.If you wish to run it from the command line, for more advanced options and parameters, you can find it installed in `/opt/retropie/supplementary/skyscraper/Skyscraper`.
 
-<img width="579" alt="Skyscraper RetroPie package menu" src="https://retropie.org.uk/forum/assets/uploads/files/1551116278774-4ef4d83b-7b8d-481b-a4f9-bff542fca40f-image.png">
+<img width="579" alt="Skyscraper RetroPie package menu" src="../images/scraper/skyscraper_1.png">
 
 Scraping your ROMs and games consists of at least 2 actions:
 
@@ -284,7 +284,7 @@ When using the **Skyscraper** module from the RetroPie-Setup script, the followi
   * ONLINE: worldofspectrum.org
   * ONLINE: adb.arcadeitalia.net
   * LOCAL: esgamelist - Scrapes and caches data from an EmulationStation gamelist.xml located at `$HOME/RetroPie/roms/[platform]/gamelist.xml` or `~/.skyscraper/import/[platform]/gamelist.xml`
-  * LOCAL: import -- imports resources into the resource cache. Read more about this [here](https://github.com/muldjord/skyscraper/blob/master/docs/IMPORT.md).
+  * LOCAL: import -- imports resources into the resource cache. Read more about this [here](https://gemba.github.io/skyscraper/IMPORT/).
 
   **NOTE:** Some online sources require a username/password for using them. You can add this information by editing the `config.ini` configuration file (from the **Advanced options** menu).
 
@@ -339,9 +339,9 @@ When using the **Skyscraper** module from the RetroPie-Setup script, the followi
   **NOTE:** Be aware that gathering and caching videos could take up a lot of disk space.
 
   * _Advanced options_ is a separate sub-menu for advanced actions:
-    - Edit the [**config.ini**](https://github.com/muldjord/skyscraper/blob/master/docs/CONFIGINI.md) file.
-    - Edit the [**artwork.xml**](https://github.com/muldjord/skyscraper/blob/master/docs/ARTWORK.md) file.
-    - Edit the **aliasMap.csv** file.
+    - Edit the [**config.ini**](https://gemba.github.io/skyscraper/CONFIGINI/) file.
+    - Edit the [**artwork.xml**](https://gemba.github.io/skyscraper/ARTWORK/) file.
+    - Edit the [**aliasMap.csv**](https://github.com/Gemba/skyscraper/blob/master/aliasMap.csv) file.
 
   * _Check for Updates_ will check if a new **Skyscraper** release is available, giving you the option to update to that release.
 
@@ -349,7 +349,7 @@ When using the **Skyscraper** module from the RetroPie-Setup script, the followi
 
 #### Configuration files
 
-**Skyscraper** keeps its configuration files and downloaded resources cache in the `~/.skyscraper` folder. When installed through the RetroPie-Setup, this folder is also accesible via [Samba Shares](First-Installation#samba-shares) at
+**Skyscraper** keeps its configuration files and downloaded resources cache in the `~/.skyscraper` folder. When installed through the RetroPie-Setup, this folder is also accessible via [Samba Shares](First-Installation#samba-shares) at
 
 ```
 \\retropie\configs\all\skyscraper
@@ -365,15 +365,15 @@ Here's an example combining a game's screenshot, its cover and the wheel media f
 
 _cover_ | _screenshot_ | _wheel_ | **Final Artwork**
 :-:|:-:|:-:|:-:
-![cover](https://user-images.githubusercontent.com/31816814/47103794-ac009e00-d248-11e8-881a-d9bdaa1ff00a.png) | ![screenshot](https://user-images.githubusercontent.com/31816814/47103839-bcb11400-d248-11e8-9bf6-9b2043432c1a.png) | ![wheel](https://user-images.githubusercontent.com/31816814/47103856-cd618a00-d248-11e8-8eed-ef4c7728494e.png) | ![artowk](https://user-images.githubusercontent.com/31816814/47103761-9a1efb00-d248-11e8-936d-d52c33aecde1.png)
+![cover](images/scraper/skyscraper_cover.png) | ![screenshot](images/scraper/skyscraper_shot.png) | ![wheel](images/scraper/skyscraper_wheel.png) | ![artwork](images/scraper/skyscraper_artwork.png)
 
-Consult the [official artwork documentation](https://github.com/muldjord/skyscraper/blob/master/docs/ARTWORK.md) on the artwork customisation.
+Consult the [official artwork documentation](https://gemba.github.io/skyscraper/ARTWORK/) on the artwork customisation.
 
 #### Import your own media
 
 If you have your own media, **Skyscraper** can import it and use it for scraping your ROMs.
 
-Consult the [official import documentation](https://github.com/muldjord/skyscraper/blob/master/docs/IMPORT.md) to understand how to use this feature.
+Consult the [official import documentation](https://gemba.github.io/skyscraper/IMPORT/) to understand how to use this feature.
 
 ## Troubleshooting
 ### Slow Boot and Shutdown Times

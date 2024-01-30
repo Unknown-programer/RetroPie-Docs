@@ -159,7 +159,7 @@ Create a `platforms.cfg` in
 /opt/retropie/configs/all/platforms.cfg
 ```
 
-name, extensions, platform (used by es for scraping), and the theme can be overriden, see [HERE](https://github.com/RetroPie/RetroPie-Setup/blob/master/platforms.cfg) for the default _platforms.cfg_.
+name, extensions, platform (used by es for scraping), and the theme can be overridden, see [HERE](https://github.com/RetroPie/RetroPie-Setup/blob/master/platforms.cfg) for the default _platforms.cfg_.
 
 The following is an example of a custom _platforms.cfg_:
 
@@ -178,16 +178,20 @@ videopac_platform="odyssey2"
 
 ### Controller Configs
 
-After configuring your controller in ES, your controller configurations will be saved to 
+After configuring your controller in ES, your controller configurations will be saved to: 
 ```
 ~/.emulationstation/es_input.cfg
 ```
 
 #### es_input.cfg edits
 
-RetroPie uses custom generation scripts that will generate controller configurations for many emulators through the initial ES controller configuration, so if you remove or make any edits to this configuration you need to regenerate that hook 
+RetroPie uses custom generation scripts that will create the controller configurations for many emulators after going through the initial ES controller configuration. If you remove or make any modifications to this configuration, the changes will not automatically propagate to the emulators, so it's recommended that any re-configuration of the controller to be perfromed from ES's input configuration dialog.
 
-Retropie Setup Script >> Manage Packages >> Manage Core Packages >> EmulationStation >> Configuration / Options >> Clear / Reset EmulationStation Input Configuration 
+To reset completely the controller configuration in ES, use the RetroPie-Setup script to do it, by navigating to:
+
+  _Retropie Setup ➤ Configuration/Tools ➤ emulationstation ➤ Clear / Reset EmulationStation Input Configuration_
+  
+After the reset action above is performed, restart EmulationStation or the RetroPie system and EmulationStation will start with the input cofiguration dialog, asking for a new controller to be configured.
 
 ### Scraper
 
